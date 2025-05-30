@@ -1,0 +1,108 @@
+/* src/app/globals.css */
+
+/* Next.js 기본 스타일 */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  margin: 0; /* 푸터가 하단에 고정되도록 body의 기본 마진 제거 */
+  padding: 0; /* 푸터가 하단에 고정되도록 body의 기본 패딩 제거 */
+}
+
+/* 아래는 우리가 추가한 스타일 */
+
+/* Header 컴포넌트 스타일 */
+.app-header {
+  background-color: #333;
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.app-header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.app-header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Footer 컴포넌트 스타일 */
+.app-footer {
+  background-color: #f0f0f0;
+  color: #555;
+  padding: 15px 0;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.app-footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.app-footer p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* Main Content (src/app/page.tsx) 스타일 */
+.main-content {
+  padding: 40px 0;
+  background-color: #f9f9f9;
+  flex-grow: 1; /* layout.tsx의 main 태그와 함께 작동하여 남은 공간 채우기 */
+}
+
+.main-content .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-content h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.main-content p {
+  text-align: center;
+  color: #666;
+  line-height: 1.6;
+}
