@@ -1,31 +1,63 @@
 // src/components/Calendar.tsx
 
-"use client"; // 클라이언트 컴포넌트로 지정
+"use client";
 
 import React, { useState } from "react";
-import Calendar from "react-calendar"; // react-calendar 라이브러리 임포트
-import "react-calendar/dist/Calendar.css"; // react-calendar 기본 CSS 임포트
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import events from "@/data/events";
+import { CalendarEvent } from "@/data/events"; // CalendarEvent 타입 임포트
 
-// Date 또는 Date[] 타입 정의 (단일 날짜 또는 날짜 범위 선택을 위함)
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export default function MyCalendar() {
-  // 달력에서 선택된 날짜(또는 날짜 범위)를 관리하는 상태
   const [value, onChange] = useState<Value>(new Date());
+
+  // 특정 날짜에 일정이 있는지 확인하는 함수
+  // event 매개변수에 CalendarEvent 타입을 명시적으로 사용합니다.
+  const hasEventOnDate = (date: Date): boolean => {
+    return events.some(
+      (
+        event: CalendarEvent // <-- 여기에 CalendarEvent 타입을 명시
+      ) =>
+        event.start.getFullYear() === date.getFullYear() &&
+        event.start.getMonth() === date.getMonth() &&
+        event.start.getDate() === date.getDate()
+    );
+  };
+
+  // ... 나머지 코드 (이전과 동일)
+
+  const tileContent = ({ date, view }: { date: Date; view: string }) => {
+    if (view === "month" && hasEventOnDate(date)) {
+      return <div className="event-dot"></div>;
+    }
+    return null;
+  };
+
+  const handleDateClick = (date: Date) => {
+    alert(
+      `${date.toLocaleDateString(
+        "ko-KR"
+      )} 일정을 확인하거나 추가할 수 있습니다.`
+    );
+  };
 
   return (
     <div className="my-calendar-container">
       <h2>달력</h2>
       <Calendar
-        onChange={onChange} // 날짜가 변경될 때 호출될 함수
-        value={value} // 현재 선택된 날짜
-        calendarType="gregory" // 달력 타입 (그레고리력)
+        onChange={onChange}
+        value={value}
+        calendarType="gregory"
         formatDay={(locale, date) =>
           date.toLocaleString("en", { day: "numeric" })
-        } // 일자만 표시
-        showNeighboringMonth={false} // 이전/다음 달 날짜 표시 여부
-        locale="ko-KR" // 한국어 로케일 설정
+        }
+        showNeighboringMonth={false}
+        locale="ko-KR"
+        tileContent={tileContent}
+        onClickDay={handleDateClick}
       />
       {value && (
         <p className="selected-date-info">
