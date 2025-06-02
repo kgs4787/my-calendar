@@ -14,9 +14,8 @@
 
 **백엔드:**
 
-- Node.js
-- Express.js
-- 데이터베이스 (MongoDB 또는 PostgreSQL 등)
+- [Next.js API Routes](https://nextjs.org/docs/app/building-your-application/routing/api-routes) (내장 API 서버)
+- [PostgreSQL](https://www.postgresql.org/) + [Prisma](https://www.prisma.io/)
 
 ## 📦 프로젝트 설정 및 실행
 
