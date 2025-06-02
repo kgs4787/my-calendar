@@ -20,19 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={inter.className}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            minHeight: "100vh",
-          }}
-        >
-          {" "}
+      <body className={inter.className + " bg-gray-50 text-gray-900"}>
+        <div className="flex flex-col min-h-screen">
           {/* 전체 레이아웃을 위한 flex 컨테이너 */}
           <Header />
-          <main style={{ flexGrow: 1 }}>
-            {" "}
+          <main className="flex-1 container mx-auto px-4 py-8">
             {/* 메인 콘텐츠 영역이 유연하게 확장되도록 */}
             {children}
           </main>

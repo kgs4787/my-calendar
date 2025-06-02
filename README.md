@@ -2,14 +2,6 @@
 
 개인 일정 관리를 위한 웹 애플리케이션입니다. Next.js, React, TypeScript, ESLint를 사용하여 개발되었습니다.
 
-## 🚀 주요 기능 (예정)
-
-- 일정 추가, 수정, 삭제
-- 매일매일 해야하는 루틴 설정
-- 달력 기반 일정 시각화
-- 알림 기능
-- 추가 예정...
-
 ## ✨ 기술 스택
 
 **프론트엔드:**
@@ -18,8 +10,9 @@
 - [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [ESLint](https://eslint.org/)
+- [Tawilwindcss](https://tailwindcss.com/)
 
-**백엔드 (예정):**
+**백엔드:**
 
 - Node.js
 - Express.js
@@ -64,3 +57,15 @@ npm run start
 또는 yarn start
 
 프로덕션 모드에서는 http://localhost:3000 에서 애플리케이션을 확인할 수 있습니다.
+
+# 계획
+
+## 2025 05 30 ~ 2025 06 08
+
+## 주요 기능 (예정)
+
+- 일정 추가, 수정, 삭제
+- 매일매일 해야하는 루틴 설정
+- 달력 기반 일정 시각화
+- 알림 기능
+- 추가 예정...
