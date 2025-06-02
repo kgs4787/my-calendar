@@ -1,18 +1,14 @@
-// src/components/Footer.tsx
-
 import React from "react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear(); // 현재 연도를 동적으로 가져옵니다.
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="app-footer">
-      <div className="container">
-        <p>&copy; {currentYear} 나의 개인 일정 관리. All rights reserved.</p>
-        {/* <nav>
-          <a href="/privacy">개인정보처리방침</a>
-          <a href="/terms">이용약관</a>
-        </nav> */}
+    <footer className="bg-gray-100 text-gray-700 py-4 text-center border-t border-gray-200">
+      <div className="max-w-6xl mx-auto px-4">
+        <p className="text-sm m-0">
+          &copy; {currentYear} 나의 개인 일정 관리. All rights reserved.
+        </p>
       </div>
     </footer>
   );
